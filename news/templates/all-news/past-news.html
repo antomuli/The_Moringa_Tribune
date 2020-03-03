@@ -1,0 +1,26 @@
+{% extends 'all-news/base.html' %}
+
+{% block content %}
+{{block.super}}
+<div class="container-fluid">
+    <!-- Looping through news -->
+    {% for news_item in news %}
+    <div class="row">
+        <!-- Displaying news article -->
+        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+            <h1 class="text-center">{{ news_item.title}} </h1>
+            <p class="text-center">{{news_item.post}} </p>
+            <div class="col-md-4">
+                <!--Display news Article images  -->
+                <img src="{{news_item.article_image.url}}" class="img-responsive" alt="Image">
+            </div>
+
+        </div>
+    </div>
+    {% empty %}
+    <div class="row">
+        <h1 class="text-center"> No available News Items </h1>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
