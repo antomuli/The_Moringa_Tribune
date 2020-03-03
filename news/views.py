@@ -6,13 +6,21 @@ from django.http import HttpResponse,Http404
 import datetime as dt
 from django.shortcuts import render,redirect
 from .models import Article
+from .forms import NewsLetterForm
+
 
 # Create your views here.
 #Getting today's date
 def news_today(request):
+    if request.method == 'POST':
+        Form = NewsLetterForm(request.POST)
+        if form.is_valid():
+            print('valid')
+    else:
+        form = NewsLetterForm()
     date = dt.date.today()
     news = Article.todays_news()
-    return render(request,'all-news/today-news.html',{"date":date,"news":news})
+    return render(request,'all-news/today-news.html',{"date":date,"news":news,"letterForm":form})
 
     
 
