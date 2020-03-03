@@ -7,6 +7,14 @@
 <div class="container">
 
     <!-- Looping through news -->
+    <div class="container-fluid">
+        <form action="{%url 'newsToday'%}" method="post">
+            {%csrf_token%}
+
+            {% bootstrap_form letterForm layout='inline' %}
+            <input type="submit" value="subscribe">
+        </form>
+    </div>
     {% for news_item in news %}
     <div class="row">
         <!-- displaying News articles -->
