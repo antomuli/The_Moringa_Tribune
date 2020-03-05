@@ -3,6 +3,8 @@ from __future__ import unicode_literals
 
 from django.db import models
 import datetime as dt
+from cloudinary.models import CloudinaryField
+
 
 # Create your models here.
 class Editor(models.Model):
@@ -32,7 +34,7 @@ class Article(models.Model):
     editor = models.ForeignKey(Editor)
     tags = models.ManyToManyField(tags)
     pub_date = models.DateTimeField(auto_now_add=True)
-    article_image = models.ImageField(upload_to = 'articles/')
+    article_image = CloudinaryField(upload_to = 'articles/')
 
     
     @classmethod
@@ -53,4 +55,4 @@ class Article(models.Model):
 
 class NewsLetterRecipients(models.Model):
     name = models.CharField(max_length = 30)
-    email models.EmailField()
+    email= models.EmailField()
