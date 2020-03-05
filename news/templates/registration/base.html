@@ -1,18 +1,16 @@
 {% load bootstrap3 %}
-{% load staticfiles %}
+{% load static %}
 <!DOCTYPE html>
 <html>
 
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
-
+  <link rel="icon" href="https://images.pexels.com/photos/1851415/pexels-photo-1851415.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" type="image" sizes="16x16">
   {%if title%}
-
-  <title>{{title}}</title>
-
-  {%endif%}
+ <title>{{title}}</title>
+  <link rel="shortcut icon" href="{% static 'favicon.png' %}"/>
+ %endif%}
 
   {% block styles %}
     {% bootstrap_css %}
