@@ -42,7 +42,8 @@ INSTALLED_APPS = [
     'news.apps.NewsConfig',
     'bootstrap3',
     'tinymce',
-    'cloudinary' #add app
+    'cloudinary', #add app
+    'rest_framework',
 ]
 #add app
 cloudinary.config(
