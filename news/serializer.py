@@ -3,6 +3,6 @@ from .models import MoringaMerch
 
 
 class MerchSerializer(serializers.ModelSerializer):
-    class meta:
+    class Meta:
         model = MoringaMerch
         fields = ('name','description','price')
