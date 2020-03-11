@@ -10,6 +10,7 @@ urlpatterns =[
     url(r'^article/(\d+)',views.article,name ='article'),
     url(r'^new/article$', views.new_article, name='new-article'),
     url(r'^ajax/newsletter/$', views.newsletter, name='newsletter')
+    url(r'^api/merch/$',views.MerchList.as_view())
 ]
 if settings.DEBUG:
     urlpatterns+= static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
